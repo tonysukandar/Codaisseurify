@@ -1,4 +1,4 @@
-<%= form_for @songs, html: { multipart: true } do |f| %>
+<%= form_for @artist, html: { multipart: true } do |f| %>
 
   <div class="form-group">
     <label>The name of the song</label>
@@ -12,7 +12,7 @@
 
   <div class="form-group">
     <label>The genre</label>
-    <%= f.text_area :image_link, rows: 5, placeholder: "eg. Pop, Rock, Jazz, Country", class: "form-control" %>
+    <%= f.text_area :genre, rows: 5, placeholder: "eg. Pop, Rock, Jazz, Country", class: "form-control" %>
   </div>
 
   <div class="actions">

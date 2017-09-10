@@ -3,7 +3,7 @@
   <div class="col-md-9">
     <div class="panel panel-primary">
       <div class="panel-heading">
-        All the songs of artists
+        All the songs of <%= @artist.name %>
       </div>
         <div class="panel-body">
         <% @artist.songs.each do |song| %>
@@ -19,4 +19,6 @@
       </div>
     </div>
   </div>
+  <%= link_to "Back", artists_path, class: "btn btn-primary" %>
+  <%= link_to "Add new song", new_artist_song_path(@artist), class: "btn btn-primary" %>
 </div>

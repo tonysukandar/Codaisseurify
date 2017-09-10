@@ -1,9 +1,5 @@
 class SongsController < ApplicationController
-  def index
-    @songs = @artist.songs
-  end
-
-  #before_action :get_artist
+  before_action :get_artist
 
   def index
       @songs = Song.all
@@ -20,6 +16,14 @@ class SongsController < ApplicationController
   end
 
   private
+
+  def song_params
+    params
+      .require(:song)
+      .permit(
+        :song_name, :release_year, :genre
+      )
+  end
 
   def get_artist
     @artist = Artist.find(params[:artist_id])

@@ -9,4 +9,12 @@ class ArtistsController < ApplicationController
     @artists = Artist.all
   end
 
+private
+
+  def artist_params
+    params
+      .require(:artist)
+      .permit(:name, :picture, :artist_id)
+  end
+
 end
