@@ -11,9 +11,9 @@
           <div class="col-md-9">
             <h4><%= song.song_name %></h4>
           </div>
-          <!-- <div class="col-md-3">
-            <%= link_to "Delete", artist_song_path(artist,song), class: "btn btn-primary", method: :delete, data: { confirm: "Are you sure?" } %>
-          </div> -->
+          <div class="col-md-3">
+            <%= link_to "Delete", artist_song_path(@artist,song), class: "btn btn-primary", method: :delete, data: { confirm: "Are you sure?" } %>
+          </div>
         </div>
         <% end %>
       </div>
