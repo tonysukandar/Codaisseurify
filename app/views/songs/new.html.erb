@@ -1,1 +1,15 @@
 <h1>Songs#new</h1>
+<%= form_for [@artist, @artist.songs.new] do |f| %>
+
+<h1>New Song</h1>
+<ul>
+  <% @song.errors.full_messages.each do |message| %>
+  <li><%= message %></li>
+  <% end %>
+</ul>
+
+<%= f.text_field :title %>
+<%= @artist.name %>
+
+<%= f.submit "Add New Song" %>
+<% end %>
