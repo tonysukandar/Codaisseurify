@@ -1,59 +1,18 @@
 <%= form_for @songs, html: { multipart: true } do |f| %>
 
   <div class="form-group">
-    <label>Description</label>
-    <%= f.text_area :description, rows: 5, placeholder: "Something about your event", class: "form-control" %>
+    <label>The name of the song</label>
+    <%= f.text_area :song_name, rows: 5, placeholder: "song name", class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <label>Location</label>
-    <%= f.text_area :location, rows: 5, placeholder: "The location of your event", class: "form-control" %>
+    <label>Year of release</label>
+    <%= f.number_field :release_year, rows: 5, placeholder: "eg. 2010", class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <label>Image link</label>
-    <%= f.text_area :image_link, rows: 5, placeholder: "The image link of your event", class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.check_box :includes_food %> Includes food
-  </div>
-  <div class="form-group">
-    <%= f.check_box :includes_drinks %> Includes drinks
-  </div>
-
-  <div class="form-group">
-    <label>Price</label>
-    <div class="input-group">
-      <div class="input-group-addon">€</div>
-      <%= f.number_field :price, placeholder: "eg. 100", class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label>Capacity</label>
-    <div class="input-group">
-      <div class="input-group-addon">persons</div>
-      <%= f.number_field :capacity, placeholder: "eg. 200", class: "form-control" %>
-    </div>
-  </div>
-
-  <label>Photos</label>
-  <div class="form-group">
-    <span class="btn btn-default">
-      Upload Photos
-      <%= file_field_tag "images[]", type: :file, multiple: true %>
-    </span>
-  </div>
-
-  <div id="photos">
-    <%= render 'photos/list' %>
-  </div>
-
-  <label>Publish this?</label>
-
-  <div class="form-group">
-    <%= f.check_box :active %> Active
+    <label>The genre</label>
+    <%= f.text_area :image_link, rows: 5, placeholder: "eg. Pop, Rock, Jazz, Country", class: "form-control" %>
   </div>
 
   <div class="actions">

@@ -1,13 +1,33 @@
 Song.destroy_all
+Photo.destroy_all
 Artist.destroy_all
 
 # to do pictures
-bboys = Artist.create(name: "Backstreet Boys", picture: "pict 1")
-mbolton = Artist.create(name: "Micheal Bolton", picture: "pict 2")
-stwain = Artist.create(name: "Shania Twain", picture: "pict 3")
-queen = Artist.create(name: "Queen", picture: "pict 4")
-metal = Artist.create(name: "Metallica", picture: "pict 5")
-bjoel = Artist.create(name: "Billy Joel", picture: "pict 6")
+bboys = Artist.create(name: "Backstreet Boys")
+mbolton = Artist.create(name: "Micheal Bolton")
+stwain = Artist.create(name: "Shania Twain")
+queen = Artist.create(name: "Queen")
+metal = Artist.create(name: "Metallica")
+bjoel = Artist.create(name: "Billy Joel")
+
+photo1 = Photo.create!(remote_image_url:
+"http://res.cloudinary.com/do2izy6xg/image/upload/v1505047557/michealbolton_ananxo.jpg",
+artist: bboys)
+photo2 = Photo.create!(remote_image_url:
+"http://res.cloudinary.com/do2izy6xg/image/upload/v1505046805/backstreetboys_by7zmm.jpg",
+artist: mbolton)
+photo3 = Photo.create!(remote_image_url:
+"http://res.cloudinary.com/do2izy6xg/image/upload/v1505046805/shaniatwain_eu1hwt.jpg",
+artist: stwain)
+photo4 = Photo.create!(remote_image_url:
+"http://res.cloudinary.com/do2izy6xg/image/upload/v1505046804/queen_nszlmj.jpg",
+artist: queen)
+photo5 = Photo.create!(remote_image_url:
+"http://res.cloudinary.com/do2izy6xg/image/upload/v1505046805/metallica_idfbcd.jpg",
+artist: metal)
+photo6 = Photo.create!(remote_image_url:
+"http://res.cloudinary.com/do2izy6xg/image/upload/v1505046805/billyjoel_wyb5ml.jpg",
+artist: bjoel)
 
 
 songnr1 = Song.create!(song_name: "Everybody", release_year: 1998, genre: "Pop", artist: bboys)
