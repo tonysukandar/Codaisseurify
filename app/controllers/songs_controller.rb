@@ -9,8 +9,18 @@ class SongsController < ApplicationController
     @song = Song.new
   end
 
+  def create
+    @song = Song.new(song_params)
+    @song.artist_id = params[:artist_id]
+    if @song.save
+      redirect_to artist_path(@song.artist), notice: "Song successfully created"
+    else
+      render :new
+  end
+end
+
   def destroy
-    @song = Song.find(params[:id])
+    @song = @artist.songs.find(params[:id])
     @song.destroy
     redirect_to artist_path(@song.artist), notice: "Song successfully removed"
   end

@@ -1,4 +1,4 @@
-<%= form_for @artist, html: { multipart: true } do |f| %>
+<%= form_for [@artist, @artist.songs.build], html: { multipart: true } do |f| %>
 
   <div class="form-group">
     <label>The name of the song</label>

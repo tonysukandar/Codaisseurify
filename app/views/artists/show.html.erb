@@ -9,7 +9,7 @@
         <% @artist.songs.each do |song| %>
         <div class="row">
           <div class="col-md-9">
-            <h4><%= song.song_name %></h4>
+              <%= song.song_name %>
           </div>
           <div class="col-md-3">
             <%= link_to "Delete", artist_song_path(@artist,song), class: "btn btn-primary", method: :delete, data: { confirm: "Are you sure?" } %>
@@ -18,8 +18,7 @@
         <% end %>
       </div>
     </div>
+    <%= link_to "Back", artists_path, class: "btn btn-primary" %>
     <%= link_to "Add new song", new_artist_song_path(@artist), class: "btn btn-primary" %>
   </div>
-  <%= link_to "Back", artists_path, class: "btn btn-primary" %>
-  <%= link_to "Add new song", new_artist_song_path(@artist), class: "btn btn-primary" %>
 </div>

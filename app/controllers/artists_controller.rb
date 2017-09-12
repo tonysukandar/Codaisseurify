@@ -3,7 +3,9 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
     @songs = @artist.songs.all
 #    @songs = Song.all
-  end
+#    @photos = Photo.all
+    @photos = @artist.photos
+end
 
   def index
     @artists = Artist.all
