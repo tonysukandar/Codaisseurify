@@ -1,17 +1,18 @@
-<h1>Artists</h1>
+
 <div class="row">
-  <div class="col-md-9">
+  <div class="col-md-12">
     <div class="panel panel-primary">
       <div class="panel-heading">
-        The artists
+        <h2>Artists</h2>
       </div>
       <div class="panel-body">
+        <div class="row">
         <% @artists.each do |artist| %>
-          <div class="col-md-6">
-            <%= artist.picture %>
+          <div class="col-md-7">
+            <%= image_tag artist.image_link %>
           </div>
-          <div class="col-md-6">
-            <%= link_to artist.name, artist_path(artist), class: "btn btn-primary"%><br/>
+          <div class="col-md-5">
+              <h1><%= link_to artist.name, artist_path(artist), class: "btn btn-primary"%></h1><br/>
           </div>
           <% end %>
       </div>

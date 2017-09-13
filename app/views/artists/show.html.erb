@@ -1,18 +1,17 @@
-<h1>Show#artists</h1>
 <div class="row">
   <div class="col-md-9">
     <div class="panel panel-primary">
       <div class="panel-heading">
-        All the songs of <%= @artist.name %>
+        <h1>All the songs of <%= @artist.name %></h1>
       </div>
         <div class="panel-body">
         <% @artist.songs.each do |song| %>
         <div class="row">
-          <div class="col-md-9">
-              <%= song.song_name %>
+          <div class="col-md-10">
+              <h3><%= song.song_name %></h3>
           </div>
-          <div class="col-md-3">
-            <%= link_to "Delete", artist_song_path(@artist,song), class: "btn btn-primary", method: :delete, data: { confirm: "Are you sure?" } %>
+          <div class="col-md-2">
+            <h3><%= link_to "Delete", artist_song_path(@artist,song), class: "btn btn-primary", method: :delete, data: { confirm: "Are you sure?" } %></h3>
           </div>
         </div>
         <% end %>
