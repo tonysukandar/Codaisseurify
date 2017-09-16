@@ -8,11 +8,9 @@ class SongsController < ApplicationController
 
   def new
     @song = Song.new
-    @artist = Artist.find(params[:artist_id])
   end
 
   def edit
-    @artist = Artist.find(params[:artist_id])
   end
 
   def update
@@ -24,13 +22,14 @@ class SongsController < ApplicationController
   end
 
   def create
-  @song = @artist.songs.new(song_params.merge(artist_id: params[:artist_id]))
-  if @song.save
-      redirect_to artist_path(@song.artist), notice: "Song successfully created"
-    else
-      render :new
+    @song = @artist.songs.new(song_params.merge(artist_id: params[:artist_id]))
+#    @song.artist = Artist.find(params[:artist_id])
+    if @song.save
+          redirect_to artist_path(@song.artist), notice: "Song successfully created"
+        else
+          render :new
+      end
   end
-end
 
   def destroy
     @song = @artist.songs.find(params[:id])
