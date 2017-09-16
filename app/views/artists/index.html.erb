@@ -1,6 +1,6 @@
 
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-9">
     <div class="panel panel-primary">
       <div class="panel-heading">
         <h2>Artists</h2>
@@ -8,14 +8,14 @@
       <div class="panel-body">
         <div class="row">
         <% @artists.each do |artist| %>
-          <div class="col-md-7">
-            <%= image_tag artist.image_link %>
+          <div class="col-md-7 text-center">
+            <p><%= image_tag artist.image_link %></p>
           </div>
-          <div class="col-md-5">
-              <h1><%= link_to artist.name, artist_path(artist), class: "btn btn-primary"%></h1><br/>
-              <h4><td><%= link_to "Delete artist", artist_path(artist), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary" %></h4><br/>
+          <div class="col-md-4 text-center">
+              <p><%= link_to artist.name, artist_path(artist), class: "btn-lg btn-link"%></p>
+              <p><%= link_to "Delete artist", artist_path(artist), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary" %></p>
           </div>
-          <% end %>
+        <% end %>
       </div>
     </div>
 
