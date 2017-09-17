@@ -38,7 +38,7 @@ function deleteSong(artistId, songId) {
 function deleteAllTheSongs(artistId) {
   $.ajax({
     type: "DELETE",
-    url: "/artists/" + artistId + '/songs',
+    url: "/artists/" + artistId + '/songs/destroy_all',
     contentType: "application/json",
     dataType: "json"
   })

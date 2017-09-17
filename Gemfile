@@ -50,7 +50,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
   gem 'factory_girl_rails', '4.7.0'
   gem 'faker', '1.6.6'
-end
+  end
 
 group :test do
   gem 'capybara', '~> 2.9', '>= 2.9.1'

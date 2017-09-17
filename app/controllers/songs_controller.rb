@@ -15,7 +15,7 @@ class SongsController < ApplicationController
 
   def update
       if @song.update(song_params)
-        redirect_to artist_path(@song.artist), notice: "Song successfully updated"
+        redirect_to artist_path(@song.artist), notice: "Song updated"
       else
         render :edit
       end
@@ -47,7 +47,7 @@ class SongsController < ApplicationController
   def destroy
     @song = @artist.songs.find(params[:id])
     @song.destroy
-    redirect_to artist_path(@song.artist), notice: "Song successfully removed"
+    redirect_to artist_path(@song.artist), notice: "Song removed"
   end
 
   private

@@ -1,6 +1,6 @@
 class Api::SongsController < ApplicationController
 
-  before_action :set_song, only: [:edit, :update, :destroy]
+  before_action :set_song, only: [:edit, :update, :destroy, :destroy_all]
   before_action :get_artist
 
   def index
@@ -27,7 +27,7 @@ class Api::SongsController < ApplicationController
   # end
 
   def create
-    song = artist.songs.new(song_params.merge(artist_id: params[:artist_id]))#
+    song = @artist.songs.new(song_params.merge(artist_id: params[:artist_id]))#
     if song.save
       render status: 201, json: {
         message: "Song successfully created",
@@ -41,11 +41,23 @@ class Api::SongsController < ApplicationController
   end
 
   def destroy
-    song = artist.songs.find(params[:id])
+    song = @artist.songs.find(params[:id])
     song.destroy
     render status: 200, json: {
       message: 'Song successfully deleted'
     }.to_json
+  end
+
+  def destroy_all
+    if @artist.songs.destroy_all
+      render status: 200, json: {
+        notice: "All songs were deleted"
+      }.to_json
+    else
+      render status: :unprocessable_entity, json: {
+        errors: @artist.errors
+      }.to_json
+    end
   end
 
   private

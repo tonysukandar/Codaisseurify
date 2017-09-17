@@ -31,5 +31,6 @@
     </div>
   </div>
   <%= link_to "Back", artists_path, class: "btn btn-primary" %>
-  <%= link_to "Add new song", new_artist_song_path(@artist), class: "btn btn-primary" %>
+  <%= link_to "Add new song", new_artist_song_path(@artist), class: "btn btn-primary" %><br/>
+  <%= button_tag 'Delete All Songs', id: "deleteAllTheSongs", class: "btn btn", onclick: 'removeAllTheSongs(@artist.id)' %>
 </div>

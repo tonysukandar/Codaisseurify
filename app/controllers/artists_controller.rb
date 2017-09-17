@@ -9,10 +9,10 @@ end
     @artists = Artist.all
   end
 
- def destroy
-   @artist.destroy
-   redirect_to root_path, notice: "Artist successfully removed"
- end
+  def destroy
+    @artist.destroy
+    redirect_to root_path, notice: "Artist successfully removed"
+  end
 
 private
 
